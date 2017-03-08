@@ -1,0 +1,185 @@
+<!DOCTYPE HTML>
+
+<html lang="en" ng-app="dtrap">
+
+<head>
+    <title>
+        DTRAP</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+
+    <link rel="stylesheet" href="css/shaaan.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!--    Angular JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+
+    <!--    Firebase-->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+    <!--    AngularFire-->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/alasql/0.2/alasql.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+</head>
+
+
+<body id="main_content" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-responsive-collapse">
+                    <!--                    <i class="fa fa-bars"></i>-->
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#main_content">
+                    <i class="fa fa-play-circle"></i> <span class="light"><b>DTRAP</b></span> Webapp
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-responsive-collapse">
+                <ul class="nav navbar-nav">
+                    <!--Hidden li included to remove active class from about link when scrolled up past about section-->
+                    <li class="hidden">
+                        <a href="#main_content"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="main.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="faq.html">Faq</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row" id="main_content_panels">
+            <br>
+            <h2><a href="view_adrList.html"><i class="fa fa-chevron-circle-left"></i> </a><strong>Viewing ADR database for IP Number <span label="adrIPNum"> 564</span> </strong></h2>
+            <br>
+            <br>
+            <div class="panel panel-primary">
+                <div id="listPanelHead" class="panel-heading">
+                    <h3 class="panel-title"><strong>A. DETAILS OF THE PATIENT</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <h4><strong>IP Number : </strong><span label="adrIPNum"> 564</span> </h4>
+                    <h4><strong>Gender : </strong><span label="adr_gender">Male</span></h4>
+                    <h4><strong>Pregnant : </strong><span label="adr_pregnant">No</span></h4>
+                    <h4><strong>Weight : </strong><span label="adr_weight">64</span></h4>
+                    <h4><strong>Age :</strong> <span label="adr_age">22</span></h4>
+                    <h4><strong>Date of Admission :</strong> <span label="adr_doa">20/12/2015</span></h4>
+                    <h4><strong>Date of Discharge :</strong> <span label="adr_dod">22/12/2015</span></h4>
+                    <h4><strong>Previous ADR's if any :</strong><span label="adr_prevADR"> None</span></h4>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div id="listPanelHead" class="panel-heading">
+                    <h3 class="panel-title"><strong>B. DETAILS OF SUSPECTED ADR</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <h4><strong>Brand / Generic Name of the drug : </strong><span label="adrDrugName"> Paracetamol</span> </h4>
+                    <h4><strong>Route of Administration : </strong><span label="adr_roa"> Oral</span></h4>
+                    <h4><strong>Dosage : </strong><span label="adr_dosage">500mg</span></h4>
+                    <h4><strong>Date Started : </strong><span label="adr_dateStarted"> 12/12/2012</span></h4>
+                    <h4><strong>Date Stopped :</strong> <span label="adr_dateStopped">12/12/2012</span></h4>
+                    <h4><strong>Prescribed For :</strong> <span label="adr_prescFor">Fever</span></h4>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div id="listPanelHead" class="panel-heading">
+                    <h3 class="panel-title"><strong>C. DETAILS OF SUSPECTED DRUG REACTION</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <h4><strong>Date Reaction Started : </strong><span label="adr_drs"> 12/12/2012</span> </h4>
+                    <h4><strong>Date of Recovery :</strong><span label="adr_dor"> 12/12/2012</span></h4>
+                    <h4><strong>Reaction Abated, Drug Stopped or Dose Reduced : </strong><span label="adr_reacAbated">No</span></h4>
+                    <h4><strong>Reaction reappeared after Reintroduction : </strong><span label="adr_reacReapp"> Na</span></h4>
+                    <h4><strong>Description of the Event :</strong> <span label="adr_eventDesc"> Placeholder</span></h4>
+                    <h4><strong>Laboratory Abnormality relevant to the Event :</strong> <span label="adr_labAnomoly">None</span></h4>
+                    <h4><strong>Seriousness of the Event :</strong> <span label="adr_labAnomoly">None</span></h4>
+                    <h4><strong>Causality Assessment (Naranjo's Scale) :</strong> <span label="adr_naranjo">None</span></h4>
+                    <h4><strong>Hartwig's Severity Assessment Scale :</strong> <span label="adr_hartwig">None</span></h4>
+
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div id="listPanelHead" class="panel-heading">
+                    <h3 class="panel-title"><strong>D. DETAILS OF CONCOMITANT MEDICATIONS</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <h4><strong>Brand / Generic Name of the Drug : </strong><span label="adr_concDrug"> Alprazolam</span> </h4>
+                    <h4><strong>Dosage :</strong><span label="adr_concDosage"> 0.25mg</span></h4>
+                    <h4><strong>Route of Administration : </strong><span label="adr_concROA"> Oral</span></h4>
+                    <h4><strong>Date Started : </strong><span label="adr_concDateStarted"> 12/12/2012</span></h4>
+                    <h4><strong>Date Stopped :</strong> <span label="adr_concDateStopped"> 12/12/2012</span></h4>
+                    <h4><strong>Reason for  Use :</strong> <span label="adr_concReason">None</span></h4>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div id="listPanelHead" class="panel-heading">
+                    <h3 class="panel-title"><strong>E. DETAILS OF THE REPORTER</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <h4><strong>Name of the Reporter :</strong><span label="adr_reporterName"> John Doe</span></h4>
+                    <h4><strong>Date of Report :</strong> <span label="adr_dateOfReport"> 12/12/2012</span></h4>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>Copyright &copy; DTRAP 2015. Made with &#10084; in Vijayapura
+                <br> Project by <b>Shantanu Londhe</b>, <b>Prasanna Choudhary</b> & <b>Nihar Gajare</b></p>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>-->
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/shaaan.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+{
+  "rules": {
+    "salesman": {
+      ".read": "true",
+      ".write": "auth != null"
+    }
+  }
+}

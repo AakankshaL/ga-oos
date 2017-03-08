@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="dtrap">
+
+<head>
+    <title> GA - Online Ordering System</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-material-design.css">
+    <link rel="stylesheet" type="text/css" href="css/ripples.min.css">
+    <link rel="stylesheet" href="css/shaaan.css">
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--    Angular JS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <!--    Firebase-->
+    <!--<script src="https://cdn.firebase.com/js/client/2.4.2/firebase.js"></script>-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+    <script src="js/config.js"></script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.9.0.js"></script>
+    <!--    AngularFire-->
+    <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+    <script src="js/jqprint.0.3.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-controller="sample" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <nav id="navigation" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>-->
+                <a class="navbar-brand page-scroll" href="#page-top"> <i class="fa fa-play-circle"></i> <span class="light"><b>GA </b></span> - Oos </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <!--<div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                     Hidden li included to remove active class from about link when scrolled up past about section
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#login">Login</a>
+                    </li>
+                </ul>
+            </div>--></div>
+    </nav>
+    <!-- Intro Header -->
+    <header id="login" class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">GAYATRI AGENCIES</h1>
+                        <br>
+                        <p class="intro-text">
+                            <br>ONLINE DRUG ORDERING SYSTEM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="row" id="login_info">
+        <div class="col-lg-8 col-lg-offset-2">
+            <h4>Please login to continue. You agree to the <a href="#" data-toggle="modal" data-target="#eula">terms</a> when you login to this application.</h4>
+            <br>
+            <!-- Button trigger modal -->
+            <button id="quickstart-sign-in" type="button" class="btn btn-raised btn-default btn-lg" href="main.html">log in <i class="fa fa-sign-in"></i> </button>
+            <!-- Modal -->
+            <div class="modal fade" id="eula" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div id="viewModal" class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h1 class="modal-title" id="myModalLabel">Terms of Usage</h1> </div>
+                        <div class="modal-body">
+                            <p>This <b>End User License Agreement (EULA)</b> is a legal agreement between <b>you</b> (either an individual or a single entity) and the <b>author</b> of this software for the software product identified above, which includes computer software and may include associated media, printed materials, and "online" or electronic documentation (SOFTWARE PRODUCT SUITE) <i>By installing, copying or otherwise using the
+                                SOFTWARE PRODUCT, you agree to be bounded by the terms of this EULA. If you do not
+                                agree to the terms of this EULA agreement, do not install or use the SOFTWARE
+                                PRODUCT</i>
+                                <br>
+                                <BR>1. This software is being distributed for the use of GAYATRI AGENCIES, Kalwa. You are NOT allowed to make a charge for distributing this software</BR>
+                                <BR>2. You are NOT allowed to change or modify the software in any manner</BR>
+                                <BR>3. You are allowed to use this software ONLY if you are a registered employee of the said firm</BR>
+                                <BR>4. The developer reserves all rights to the application and the material contained within</BR>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p> Developed by <b>Shantanu Londhe</b>. Copyright&copy; Gayatri agencies | 2017 </p>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/shaaan.js"></script>
+</body>
+
+</html>
