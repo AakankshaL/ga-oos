@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "ga-onlineorders",
+    "staging": "ga-onlineorders"
+  }
+}
