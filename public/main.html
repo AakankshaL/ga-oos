@@ -1,26 +1,30 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en" ng-app="ga-oos">
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GA - Online Ordering</title>
-    <link rel="stylesheet" href="material.min.css">
+    <link rel="stylesheet" href="material.css">
     <script src="material.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!-- AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
     <!--Firebase Stuff-->
     <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
     <script src="config.js"></script>
     <script src="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/1.0.0/firebaseui.css" />
-    <script src="appstuff.js"></script>
-    <script>
-        window.addEventListener('load', function () {
-            initApp()
-        });
-    </script>
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <script src="appAngular.js"></script>
+    <!--<script>
+    window.addEventListener('load', function () {
+        initApp()
+    });
+</script>-->
 </head>
 
-<body>
+<body ng-controller="signout">
     <!-- Always shows a header, even in smaller screens. -->
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
@@ -30,7 +34,7 @@
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation. We hide it in small screens. -->
                 <nav class="mdl-navigation mdl-layout--large-screen-only">
-                    <button id="blah" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Logout</button>
+                    <button ng-click="logout()" id="blah" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Logout</button>
                     <!--<div id="sign-in-status"></div>
                     <div id="account-details"></div>-->
                 </nav>
@@ -39,27 +43,20 @@
         <div class="mdl-layout__drawer"> <span class="mdl-layout-title">View</span>
             <nav class="mdl-navigation"> <a class="mdl-navigation__link" href="">Salseman wise</a> </nav>
         </div>
-        <main class="mdl-layout__content">
-            <div class="page-content">
+        <main class="mdl-layout__content" ng-controller="viewOrders">
+            <div class="page-content" id="pad">
                 <!-- Your content goes here -->
-                <div class="mdl-cell">
-                    <div class="mdl-cell--4-offset-desktop">
-                        <div class="card-wide mdl-card mdl-shadow--2dp">
-                            <!--<div class="mdl-card__title">
-    <h4 class="mdl-card__title-text">Salesman :</h4>
-    <br>
-    <h4 class="mdl-card__title-text">Customer :</h4></div>-->
-                            <div id="view-some1" class="mdl-card__supporting-text"> Salesman : </div>
-                            <div id="view-some2" class="mdl-card__supporting-text"> Customer : </div>
-                            <div id="view-some" class="mdl-card__supporting-text"> Order </div>
-                            <div class="mdl-card__actions mdl-card--border">
-                                <div class="mdl-snackbar__text" id="snackbar-action"> <a class="mdl-button  mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="snackbar">
+                <div ng-repeat="order in allOrders" class="mdl-card mdl-shadow--2dp" id="card">
+                    <div id="view-some1" class="mdl-card__supporting-text"> <pre>Salesman : {{ order.email }} </pre></div>
+                    <div id="view-some2" class="mdl-card__supporting-text"><pre> Customer : {{ order.custName }}</pre> </div>
+                    <div id="view-some" class="mdl-card__supporting-text"><pre> Order : {{ order.products }}</pre></div>
+                    <div id="view-some" class="mdl-card__supporting-text"><pre>Expired Products : {{ order.expProducts }}</pre></div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <div class="mdl-snackbar__text" id="snackbar-action"> <a ng-click="allOrders.$remove(order)" class="mdl-button  mdl-button--colored mdl-js-button mdl-js-ripple-effect" id="snackbar">
       Archive
     </a> </div>
-                            </div>
-                            <div class="mdl-card__menu"> </div>
-                        </div>
                     </div>
+                    <div class="mdl-card__menu"> </div>
                 </div>
             </div>
         </main>

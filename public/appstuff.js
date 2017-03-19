@@ -47,24 +47,3 @@ initApp = function () {
         console.log(error);
     });
 };
-logout = function () {
-        firebase.auth().signOut().then(function () {
-            //successful
-            window.location.href = "index.html";
-        });
-    }
-    // This works. Now just need to put the data in respective fields
-var database = firebase.database();
-/*var uid = firebase.auth().getUserId;*/
-var updateOrder = firebase.database().ref('allOrders/-Kf_lX5dhSgPAMnVMRbk/');
-updateOrder.on('value', function (snapshot) {
-    console.log(snapshot.val());
-    document.getElementById('view-some2').textContent = 'Customer : ' + snapshot.val().custName;
-    document.getElementById('view-some1').textContent = 'Salesman :' + snapshot.val().email;
-    document.getElementById('view-some').textContent = 'Order :' + snapshot.val().products;
-}, function (error) {
-    console.log("Error: " + error.code);
-});
-/*function startQuery() {
-	var user = firebase.auth().currentUser.uid;
-	var orders = firebase.database().ref('allOrders/')*/
