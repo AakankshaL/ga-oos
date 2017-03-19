@@ -8841,6 +8841,10 @@ fieldset[disabled] .mdl-checkbox .mdl-checkbox__ripple-container .mdl-ripple,
 /* CHIP */
 
 .mdl-mini-footer {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -17238,7 +17242,7 @@ fieldset[disabled] .mdl-textfield .mdl-textfield__label,
 }
 
 #card {
-    width: auto;
+    width: inherit;
     font-size: 50sp;
 }
 
